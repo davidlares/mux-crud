@@ -7,13 +7,13 @@ import (
  "time"
 )
 
-// convertion struct
+// convertion struct (format)
 type timeZoneConvertion struct {
  TimeZone string
  CurrentTime string
 }
 
-// map with values
+// convertion map values for calculation
 var conversionMap = map[string] string {
  "ASR": "-3h",
  "EST": "-5h",
@@ -25,13 +25,13 @@ var conversionMap = map[string] string {
 
 // main function
 func main() {
- http.HandleFunc("/", handler)
+ http.HandleFunc("/", handler) // root endpoint
  http.ListenAndServe("localhost:9000", nil)
 }
 
 // handler function
 func handler(w http.ResponseWriter, r *http.Request) {
- // getting the queryString variable
+ // getting the queryString variable timezone
  timeZone := r.URL.Query().Get("timezone")
  // calculating difference
  timeDifference, _ := conversionMap[timeZone]
@@ -58,7 +58,6 @@ func getCurrentTimeByTimeDifference(timeDifference string) (string, error) {
  if err != nil {
    return "", err
  }
-
  // modifying in certain format
  now = now.Add(difference)
  return now.Format("15:04:05"), nil
