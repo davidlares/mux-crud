@@ -4,9 +4,9 @@ This is a simple CRUD program built with Golang's `Mux` and a `Mongo` database f
 
 ## Provisioning
 
-For the persistence layer, a Mongo 3.6 Docker image is used, all the data is found inside the `timezones.json`.
+For the persistence layer, a Mongo 3.6 Docker image is used; all the data is found inside the `timezones.json`.
 
-In order to perform a database connection and insert records, you should do the following:
+To perform a database connection and insert records, you should do the following:
 
 ### Docker Setup
 
@@ -31,7 +31,7 @@ Inside the shell
 
 2. `use timezones`
 3. `show collections`
-  - It should appear the `timezones` collection
+  - It should appear in the `timezones` collection
 
 4. `tz = db.timezones`
 5. `tz.find()`
@@ -53,9 +53,7 @@ There are two scripts.
 Execute: `go run api/main.go` and follow the REST pattern for the `timezones` resource. You can check the file directly for more information.
 
 ## Credits
-
- - [David E Lares](https://twitter.com/davidlares3)
+[David Lares S](https://davidlares.com)
 
 ## License
-
- - [MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
