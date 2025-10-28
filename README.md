@@ -1,4 +1,4 @@
-# Timezones calculator Microservice
+## Timezones calculator Microservice
 
 This is a simple CRUD program built with Golang's `Mux` and a `Mongo` database from a Docker instance. The program will interact and manage basic operations on timezones records.
 
